@@ -11,6 +11,7 @@ using json = nlohmann::json;
 using std::string;
 
 class CurseModAsset {
+public:
     int32_t id;
     int32_t modId;
     string title;
@@ -18,7 +19,6 @@ class CurseModAsset {
     string thumbnailUrl;
     string url;
 
-public:
     static CurseModAsset from_json(const json &data);
 };
 
