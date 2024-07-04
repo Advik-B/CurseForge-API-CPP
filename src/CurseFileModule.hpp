@@ -8,7 +8,7 @@ namespace cf {
 using std::string;
 class CurseFileModule {
     string name;
-    int64_t fingerprint;
+    int64_t fingerprint = 0;
 };
 
 } // cf
