@@ -1,8 +1,9 @@
 
 #include "CurseMod.hpp"
-
+// #include <iostream>
 namespace cf {
     CurseMod CurseMod::from_json(const json &data) {
+        // std::cout << data.dump(4) << std::endl;
         CurseMod mod;
         mod.id = data["id"];
         mod.gameId = data["gameId"];
@@ -52,7 +53,7 @@ namespace cf {
     }
 
     CurseMod CurseMod::from_id(int32_t id, CurseForgeAPI &engine) {
-        return CurseMod::from_json(engine.fetch("/v1/mods/" + std::to_string(id)));
+        return from_json(engine.fetch("/v1/mods/" + std::to_string(id))["data"]);
     }
 
 }
