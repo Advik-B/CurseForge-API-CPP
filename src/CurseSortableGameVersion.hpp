@@ -4,9 +4,12 @@
 
 #include <string>
 #include <optional>
+#include <nlohmann/json.hpp>
+
 namespace cf {
 using std::string;
 using std::optional;
+using json = nlohmann::json;
 
 class CurseSortableGameVersion {
     string gameVersionName;
@@ -14,6 +17,9 @@ class CurseSortableGameVersion {
     string gameVersion;
     string gameVersionReleaseDate;
     optional<string> gameVersionTypeId = std::nullopt;
+
+public:
+    static CurseSortableGameVersion from_json(const json &data);
 };
 
 } // cf
