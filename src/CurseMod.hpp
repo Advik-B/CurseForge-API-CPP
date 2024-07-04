@@ -173,6 +173,7 @@ using std::vector;
 using std::optional;
 
 class CurseMod {
+public:
     int32_t id;
     int32_t gameId;
     string name;
@@ -200,7 +201,6 @@ class CurseMod {
     int32_t thumbsUpCount;
     optional<double> rating = std::nullopt;
 
-public:
     static CurseMod from_json(const json &data);
     static CurseMod from_id(int32_t id, CurseForgeAPI &engine);
 };
