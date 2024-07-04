@@ -15,7 +15,7 @@ FetchContent_MakeAvailable(json)
 
 file(GLOB SOURCES "src/*.cpp")
 file(GLOB HEADERS "src/*.hpp")
-add_executable(CurseForge_test src/main.cpp)
+add_executable(CurseForge_test tests/main.cpp)
 add_library(curseforge STATIC ${SOURCES} ${HEADERS})
 
 target_include_directories(curseforge PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/src)
