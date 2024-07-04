@@ -21,7 +21,7 @@ public:
     string filename;
     CurseFileReleaseType releaseType;
     optional<int32_t> gameVersionTypeId = std::nullopt;
-    CurseModLoaderType modLoader;
+    optional<CurseModLoaderType> modLoader = std::nullopt;
     static CurseFileIndex from_json(const json &data);
 };
 
