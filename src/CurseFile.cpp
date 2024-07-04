@@ -3,6 +3,7 @@
 
 namespace cf {
     CurseFile CurseFile::from_json(const json &data) {
+        // std::cout << data.dump(4) << std::endl;
         CurseFile file;
         file.id = data["id"];
         file.gameId = data["gameId"];
