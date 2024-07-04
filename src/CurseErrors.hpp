@@ -25,6 +25,11 @@ namespace cf::errors {
     public:
         explicit NotFoundError(string for_path);
     };
+
+    class InvalidAPIKeyError final : public CurseAPIError {
+    public:
+        explicit InvalidAPIKeyError(string key);
+    };
 }
 
 
