@@ -31,6 +31,7 @@ using std::string;
 using std::optional;
 
 class CurseCategory {
+public:
     int32_t id;
     int32_t gameId;
     string name;
@@ -42,8 +43,6 @@ class CurseCategory {
     optional<int32_t> classId = std::nullopt;
     optional<int32_t> parentCategoryId = std::nullopt;
     optional<int32_t> displayIndex = std::nullopt;
-
-public:
     static CurseCategory from_json(const json &data);
     static CurseCategory from_id(int32_t id, CurseForgeAPI &api);
     ~CurseCategory();
