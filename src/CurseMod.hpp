@@ -172,7 +172,7 @@ class CurseMod {
     int64_t downloadCount;
     bool isFeatured;
     int32_t primaryCategoryId;
-    
+
 };
 
 }
