@@ -160,6 +160,8 @@ SCHEMA
 #include "CurseModStatus.hpp"
 #include "CurseModAuthor.hpp"
 #include "CurseModAsset.hpp"
+#include "CurseFile.hpp"
+#include "CurseModLoaderType.hpp"
 
 namespace cf {
 
@@ -184,6 +186,7 @@ class CurseMod {
     CurseModAsset logo;
     vector<CurseModAsset> screenshots;
     int32_t mainFileId;
+    vector<CurseFile> latestFiles;
 
 };
 
