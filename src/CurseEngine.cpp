@@ -1,4 +1,7 @@
 #include "CurseEngine.hpp"
+
+#include <iostream>
+
 #include "CurseErrors.hpp"
 
 namespace cf {
@@ -21,7 +24,7 @@ namespace cf {
 
         try {
             return json::parse(response.text);
-        } catch (const std::exception &e) {
+        } catch (json_ns::parse_error &e) {
             throw CurseAPIError(e.what());
         }
 
