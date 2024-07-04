@@ -12,14 +12,12 @@ using json = nlohmann::json;
 using std::string;
 
 class CurseModLinks {
+public:
     string websiteUrl;
     string wikiUrl;
     string issuesUrl;
     string sourceUrl;
-
-public:
     static CurseModLinks from_json(const json &data);
-    ~CurseModLinks();
 };
 
 } // cf
