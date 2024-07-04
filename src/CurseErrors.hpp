@@ -3,34 +3,19 @@
 #define CURSEERRORS_HPP
 
 #include <exception>
+#include <utility>
 
 namespace cf {
-    class CurseError : public std::exception {
+    class CurseAPIError final : public std::exception {
     public:
-        explicit CurseError(const char *message) : message(message) {}
-
-        [[nodiscard]] const char *what() const noexcept override {
-            return message;
+        explicit CurseAPIError(std::string  message) : message(std::move(message)) {}
+        [[nodiscard]] const char* what() const noexcept override {
+            return message.c_str();
         }
 
+        explicit CurseAPIError(const std::exception &e) : message(e.what()) {}
     private:
-        const char *message;
-    };
-
-    class CurseAPIError final : public CurseError {
-    public:
-        explicit CurseAPIError(const char *message)
-            : CurseError(message) {
-        }
-
-        explicit CurseAPIError(const string & basic_string) : CurseError(basic_string.c_str()) {}
-    };
-
-    class CurseParseError final : public CurseError {
-    public:
-        explicit CurseParseError(const char *message)
-            : CurseError(message) {
-        }
+        std::string message;
     };
 }
 
