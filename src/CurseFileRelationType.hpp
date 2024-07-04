@@ -1,0 +1,18 @@
+
+#ifndef CURSEFILERELATIONTYPE_HPP
+#define CURSEFILERELATIONTYPE_HPP
+
+namespace cf {
+
+enum class CurseFileRelationType {
+    EMBEDDED_LIBRARY = 1,
+    OPTIONAL_DEPENDENCY = 2,
+    REQUIRED_DEPENDENCY = 3,
+    TOOL = 4,
+    INCOMPATIBLE = 5,
+    INCLUDE = 6,
+};
+
+} // cf
+
+#endif //CURSEFILERELATIONTYPE_HPP
