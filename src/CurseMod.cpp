@@ -50,4 +50,9 @@ namespace cf {
         }
         return mod;
     }
+
+    CurseMod CurseMod::from_id(int32_t id, CurseForgeAPI &engine) {
+        return CurseMod::from_json(engine.fetch("/v1/mods/" + std::to_string(id)));
+    }
+
 }
