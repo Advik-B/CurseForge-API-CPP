@@ -7,8 +7,8 @@ namespace cf {
 
     json CurseForgeAPI::fetch(string &path) {
         // If the path starts with a slash, remove it
-        if (url[0] == '/') {
-            url = url.substr(1);
+        if (path[0] == '/') {
+            path = path.substr(1);
         }
         auto headers = Header{
                     {"Accept", "application/json"},
