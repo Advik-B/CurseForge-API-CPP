@@ -12,10 +12,9 @@ using std::string;
 using json = nlohmann::json;
 
 class CurseFileHash {
+public:
     string value;
     CurseHashAlgo algo;
-
-public:
     static CurseFileHash from_json(const json &data);
 };
 
