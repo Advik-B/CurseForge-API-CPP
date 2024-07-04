@@ -12,13 +12,12 @@ using std::optional;
 using json = nlohmann::json;
 
 class CurseSortableGameVersion {
+public:
     string gameVersionName;
     string gameVersionPadded;
     string gameVersion;
     string gameVersionReleaseDate;
     optional<string> gameVersionTypeId = std::nullopt;
-
-public:
     static CurseSortableGameVersion from_json(const json &data);
 };
 
