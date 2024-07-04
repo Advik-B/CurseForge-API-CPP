@@ -31,5 +31,37 @@ namespace cf {
         for (const auto &dependency : data["dependencies"]) {
             file.dependencies.push_back(CurseFileDependency::from_json(dependency));
         }
+
+        if (data.contains("exposeAsAlternative")) {
+            file.exposeAsAlternative = data["exposeAsAlternative"];
+        }
+        if (data.contains("parentProjectFileId")) {
+            file.parentProjectFileId = data["parentProjectFileId"];
+        }
+        if (data.contains("alternateFileId")) {
+            file.alternateFileId = data["alternateFileId"];
+        }
+        if (data.contains("isServerPack")) {
+            file.isServerPack = data["isServerPack"];
+        }
+        if (data.contains("serverPackFileId")) {
+            file.serverPackFileId = data["serverPackFileId"];
+        }
+        if (data.contains("serverPackFileId")) {
+            file.serverPackFileId = data["serverPackFileId"];
+        }
+        if (data.contains("isEarlyAccessContent")) {
+            file.isEarlyAccessContent = data["isEarlyAccessContent"];
+        }
+        if (data.contains("earlyAccessEndDate")) {
+            file.earlyAccessEndDate = data["earlyAccessEndDate"];
+        }
+        file.fileFingerprint = data["fileFingerprint"];
+
+        for (const auto &module : data["modules"]) {
+            file.modules.push_back(CurseFileModule::from_json(module));
+        }
+
+        return file;
     }
 } // cf
