@@ -11,10 +11,9 @@ using json = nlohmann::json;
 
 
 class CurseFileDependency {
+public:
     int32_t modId;
     CurseFileRelationType relationType;
-
-public:
     static CurseFileDependency from_json(const json &data);
 };
 
