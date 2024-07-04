@@ -13,6 +13,9 @@ class CurseModAuthor {
     int32_t id;
     string name;
     string url;
+
+public:
+    static CurseModAuthor from_json(const json &data);
 };
 
 } // cf
