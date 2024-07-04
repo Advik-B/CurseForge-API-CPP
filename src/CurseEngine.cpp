@@ -1,4 +1,4 @@
-#include "CurseForgeEngine.hpp"
+#include "CurseEngine.hpp"
 
 namespace cf {
 
