@@ -5,7 +5,7 @@
 #include <nlohmann/json.hpp>
 #include <string>
 #include <optional>
-#include <CurseEngine.hpp>
+#include <CurseForgeAPI.hpp>
 
 
 /* SCHEMA
