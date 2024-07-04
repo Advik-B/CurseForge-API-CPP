@@ -3,7 +3,7 @@
 #include <iostream>
 namespace cf {
     CurseModLinks CurseModLinks::from_json(const json &data) {
-        std::cout << data.dump(4) << std::endl;
+        // std::cout << data.dump(4) << std::endl;
         CurseModLinks links;
         if (data.contains("websiteUrl") && !data["websiteUrl"].empty()) {
             links.websiteUrl = data["websiteUrl"];
