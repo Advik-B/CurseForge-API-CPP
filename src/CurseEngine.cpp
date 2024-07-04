@@ -14,4 +14,6 @@ namespace cf {
         const auto response = Get(Url{CURSEFORGE_API + url}, headers);
         return json::parse(response.text);
     }
+
+    CurseForgeAPI::~CurseForgeAPI() = default;
 }
