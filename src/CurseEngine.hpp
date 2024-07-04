@@ -21,7 +21,7 @@ namespace cf {
         CurseForgeAPI(const string &api_key, bool use_cache = false);
         CurseForgeAPI(const string &api_key);
         ~CurseForgeAPI();
-        json fetch(const string &url);
+        json fetch(const string &path);
     };
 };
 
