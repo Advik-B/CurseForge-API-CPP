@@ -7,5 +7,5 @@ namespace cf::errors {
 
     CurseAPIError::CurseAPIError(string message) : message(move(message)) {}
     NotFoundError::NotFoundError(string for_path) : CurseAPIError("[404] NotFoundError: " + for_path) {}
-    InvalidAPIKeyError::InvalidAPIKeyError(string key) : CurseAPIError("[403] Invalid APIKey : " + key) {}
+    InvalidAPIKeyError::InvalidAPIKeyError(string key) : CurseAPIError("[403] Invalid APIKey: " + key) {}
 }
