@@ -21,11 +21,10 @@ namespace cf {
                     {"Content-Type", "application/json"},
                     };
         const auto response = Get(Url{CURSEFORGE_API + path_}, headers);
-
         try {
             return json::parse(response.text);
         } catch (json_ns::parse_error &e) {
-            throw CurseAPIError(e.what());
+            throw CurseParseError(e.what());
         }
 
     }
