@@ -156,8 +156,10 @@ SCHEMA
 #include <optional>
 #include "CurseEngine.hpp"
 #include "CurseCategory.hpp"
-#include "CurseModLink.hpp"
+#include "CurseModLinks.hpp"
 #include "CurseModStatus.hpp"
+#include "CurseModAuthor.hpp"
+#include "CurseModAsset.hpp"
 
 namespace cf {
 
@@ -171,13 +173,17 @@ class CurseMod {
     int32_t gameId;
     string name;
     string slug;
-    CurseModLink links;
+    CurseModLinks links;
     CurseModStatus status;
     int64_t downloadCount;
     bool isFeatured;
     int32_t primaryCategoryId;
     vector<CurseCategory> categories;
     optional<int32_t> classId = std::nullopt;
+    vector<CurseModAuthor> authors;
+    CurseModAsset logo;
+    vector<CurseModAsset> screenshots;
+    int32_t mainFileId;
 
 };
 
