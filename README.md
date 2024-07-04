@@ -22,7 +22,43 @@ This project is still in development, and is not yet ready for production use.
 
 ## Usage
 
-> Todo
+```c++
+#include <iostream>
+#include <CurseForgeAPI.hpp>
+#include <CurseMod.hpp>
+
+using namespace std;
+
+int main() {
+    cf::CurseForgeAPI api("<api-key-here>"); 
+    // You can get an API key from https://console.curseforge.com/
+    // (You need to be logged in to get an API key)
+    const auto mod = cf::CurseMod::from_id(238222, api);
+    cout << mod.name << std; // Just Enough Items (JEI)
+    cout << mod.authors[0].name << endl; // mezz
+    return 0;
+}
+
+```
+
+### Error Handling
+
+All errors are defined in the `cf::errors` namespace. Inside [CurseErrors.hpp](src/CurseErrors.hpp)
+
+You can catch them like this:
+```c++
+#include <CurseErrors.hpp>
+
+try {
+    const auto mod = cf::CurseMod::from_id(10, api); // This mod does not exist
+    cout << mod.name << endl;
+    cout << mod.authors[0].name << endl;
+} catch (cf::errors::CurseAPIError &e) {
+    cout << "An error occurred: " << e.what() << endl;
+}
+```
+
+        
 
 ## TODO
 
