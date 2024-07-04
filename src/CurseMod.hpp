@@ -152,6 +152,8 @@ SCHEMA
 
 #include <nlohmann/json.hpp>
 #include <string>
+#include <vector>
+#include <optional>
 #include "CurseEngine.hpp"
 #include "CurseCategory.hpp"
 #include "CurseModLink.hpp"
@@ -161,6 +163,8 @@ namespace cf {
 
 using json = nlohmann::json;
 using std::string;
+using std::vector;
+using std::optional;
 
 class CurseMod {
     int32_t id;
@@ -172,6 +176,8 @@ class CurseMod {
     int64_t downloadCount;
     bool isFeatured;
     int32_t primaryCategoryId;
+    vector<CurseCategory> categories;
+    optional<int32_t> classId = std::nullopt;
 
 };
 
