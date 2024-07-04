@@ -11,7 +11,9 @@ namespace cf {
         if (data.contains("gameVersionTypeId")) {
             index.gameVersionTypeId = data["gameVersionTypeId"];
         }
-        index.modLoader = static_cast<CurseModLoaderType>(data["modLoader"]);
+        if (data.contains("modLoader")) {
+            index.modLoader = static_cast<CurseModLoaderType>(data["modLoader"]);
+        }
         return index;
     }
 } // cf
