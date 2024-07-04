@@ -22,6 +22,8 @@ namespace cf {
         explicit CurseAPIError(const char *message)
             : CurseError(message) {
         }
+
+        explicit CurseAPIError(const string & basic_string) : CurseError(basic_string.c_str()) {}
     };
 
     class CurseParseError final : public CurseError {
