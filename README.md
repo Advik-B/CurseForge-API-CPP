@@ -4,7 +4,7 @@
 [cfapi-docs]: https://wow.curseforge.com/api/docs
 [python-cfapi]: https://github.com/Advik-B/CurseForge-API/
 
-This is a no-compromise CurseForge API wrapper for C++. It is a re-write of [Curseforge API][python-cfapi] which is maintained & actively developed by me.
+This is a no-compromise CurseForge API wrapper for C++. It is a re-write of [Curseforge API][python-cfapi] which is also maintained & actively developed by me.
 
 This project is still in development, and is not yet ready for production use.
 
