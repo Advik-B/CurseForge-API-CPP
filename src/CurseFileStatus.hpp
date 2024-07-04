@@ -1,0 +1,27 @@
+
+#ifndef CURSEFILESTATUS_HPP
+#define CURSEFILESTATUS_HPP
+
+namespace cf {
+
+enum class CurseFileStatus {
+    PROCESSING = 1,
+    CHANGES_REQUIRED = 2,
+    UNDER_REVIEW = 3,
+    APPROVED = 4,
+    REJECTED = 5,
+    MALWARE_DETECTED = 6,
+    DELETED = 7,
+    ARCHIVED = 8,
+    TESTING = 9,
+    RELEASED = 10,
+    READY_FOR_REVIEW = 11,
+    DEPRECATED = 12,
+    BAKING = 13,
+    AWAITING_PUBLISHING = 14,
+    FAILED_PUBLISHING = 15,
+};
+
+} // cf
+
+#endif //CURSEFILESTATUS_HPP
