@@ -24,7 +24,7 @@ namespace cf {
         try {
             return json::parse(response.text);
         } catch (std::exception &e) {
-            throw CurseAPIError(e);
+            throw errors::CurseAPIError(e);
         }
 
     }
