@@ -70,6 +70,16 @@ try {
 - [ ] Wrap the ENTIRE API
 - [x] Rename the classes so they have a `Curse` prefix
 
+## FAQ
+- **Q:** Why did you make this?
+- **A:** I wanted to make a C++ version of the Python API wrapper I made, for performance reasons.
+---
+- **Q:** Why not use the Python API wrapper?
+- **A:** Calling python from C++ is a bit slow innit?
+---
+- **Q:** Your API key is exposed in the code!
+- **A:** 🤫 I know. And its been revoked.
+
 ## Contributing
 
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
