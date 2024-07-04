@@ -17,7 +17,7 @@ public:
     string gameVersionPadded;
     string gameVersion;
     string gameVersionReleaseDate;
-    optional<string> gameVersionTypeId = std::nullopt;
+    optional<int32_t> gameVersionTypeId = std::nullopt;
     static CurseSortableGameVersion from_json(const json &data);
 };
 
