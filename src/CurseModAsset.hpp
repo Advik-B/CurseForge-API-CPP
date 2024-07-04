@@ -17,6 +17,9 @@ class CurseModAsset {
     string description;
     string thumbnailUrl;
     string url;
+
+public:
+    static CurseModAsset from_json(const json &data);
 };
 
 } // cf
