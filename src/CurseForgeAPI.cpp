@@ -27,6 +27,8 @@ namespace cf {
             switch (response.status_code) {
                 case 404:
                     throw errors::NotFoundError(CURSEFORGE_API+path_);
+                case 403:
+                    throw errors::InvalidAPIKeyError(this->api_key);
                 default:
                     throw errors::CurseAPIError("CurseForge API returned status code " + std::to_string(response.status_code));
             }
