@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.28)
-project(CurseForge_CPP)
+project(CurseForge)
 
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}/bin)
@@ -15,14 +15,11 @@ FetchContent_MakeAvailable(json)
 
 file(GLOB SOURCES "src/*.cpp")
 file(GLOB HEADERS "src/*.hpp")
-add_executable(CurseForge_CPP src/main.cpp)
-add_library(curseforge SHARED ${SOURCES} ${HEADERS})
-add_library(curseforge_static STATIC ${SOURCES} ${HEADERS})
+add_executable(CurseForge_test src/main.cpp)
+add_library(curseforge STATIC ${SOURCES} ${HEADERS})
 
 target_include_directories(curseforge PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/src)
-target_include_directories(curseforge_static PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/src)
 
-target_link_libraries(curseforge PRIVATE cpr::cpr nlohmann_json::nlohmann_json)
-target_link_libraries(curseforge_static PRIVATE cpr::cpr nlohmann_json::nlohmann_json)
+target_link_libraries(curseforge PUBLIC cpr::cpr nlohmann_json::nlohmann_json)
+target_link_libraries(CurseForge_test PRIVATE curseforge)
 
-target_link_libraries(CurseForge_CPP PRIVATE curseforge)
