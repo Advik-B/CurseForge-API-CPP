@@ -23,8 +23,8 @@ namespace cf {
         const auto response = Get(Url{CURSEFORGE_API + path_}, headers);
         try {
             return json::parse(response.text);
-        } catch (json_ns::parse_error &e) {
-            throw CurseParseError(e.what());
+        } catch (std::exception &e) {
+            throw CurseAPIError(e);
         }
 
     }
