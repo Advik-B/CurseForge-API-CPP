@@ -154,6 +154,7 @@ SCHEMA
 #include <string>
 #include <vector>
 #include <optional>
+#include <cstdint>
 #include "CurseEngine.hpp"
 #include "CurseCategory.hpp"
 #include "CurseModLinks.hpp"
@@ -162,6 +163,7 @@ SCHEMA
 #include "CurseModAsset.hpp"
 #include "CurseFile.hpp"
 #include "CurseModLoaderType.hpp"
+#include "CurseFileIndex.hpp"
 
 namespace cf {
 
@@ -187,6 +189,20 @@ class CurseMod {
     vector<CurseModAsset> screenshots;
     int32_t mainFileId;
     vector<CurseFile> latestFiles;
+    vector<CurseFileIndex> latestFilesIndexes;
+    vector<CurseFileIndex> latestEarlyAccessFilesIndexes;
+    string dateCreated;
+    string dateModified;
+    string dateReleased;
+    optional<bool> allowModDistribution = std::nullopt;
+    int32_t gamePopularityRank;
+    bool isAvailable;
+    int32_t thumbsUpCount;
+    optional<double> rating = std::nullopt;
+
+public:
+    static CurseMod from_json(const json &data);
+
 
 };
 
