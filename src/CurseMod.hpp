@@ -155,7 +155,7 @@ SCHEMA
 #include <vector>
 #include <optional>
 #include <cstdint>
-#include "CurseEngine.hpp"
+#include "CurseForgeAPI.hpp"
 #include "CurseCategory.hpp"
 #include "CurseModLinks.hpp"
 #include "CurseModStatus.hpp"
@@ -202,8 +202,7 @@ class CurseMod {
 
 public:
     static CurseMod from_json(const json &data);
-
-
+    static CurseMod from_id(int32_t id, CurseForgeAPI &engine);
 };
 
 }
