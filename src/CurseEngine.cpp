@@ -1,12 +1,6 @@
 #include "CurseEngine.hpp"
 
 namespace cf {
-
-    CurseForgeAPI::CurseForgeAPI(const string &api_key, bool use_cache) {
-        this->api_key = api_key;
-        this->use_cache = use_cache;
-    }
-
     CurseForgeAPI::CurseForgeAPI(const string &api_key) {
         this->api_key = api_key;
     }
