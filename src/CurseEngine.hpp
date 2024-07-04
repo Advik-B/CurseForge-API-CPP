@@ -20,7 +20,7 @@ namespace cf {
     public:
         CurseForgeAPI(const string &api_key);
         ~CurseForgeAPI();
-        json fetch(string &path);
+        json fetch(const string &path);
     };
 };
 
