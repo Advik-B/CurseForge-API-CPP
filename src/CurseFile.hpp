@@ -81,6 +81,8 @@ using std::nullopt;
 using json = nlohmann::json;
 
 class CurseFile {
+
+public:
     int32_t id;
     int32_t gameId;
     int32_t modId;
@@ -108,7 +110,6 @@ class CurseFile {
     int64_t fileFingerprint;
     vector<CurseFileModule> modules;
 
-    public:
     static CurseFile from_json(const json &data);
 };
 
