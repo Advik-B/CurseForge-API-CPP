@@ -1,6 +1,6 @@
 #include <iostream>
 #include <string>
-#include "CurseForgeEngine.hpp"
+#include "CurseEngine.hpp"
 
 using namespace std;
 
