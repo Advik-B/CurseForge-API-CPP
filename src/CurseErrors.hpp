@@ -9,7 +9,7 @@ namespace cf {
     public:
         explicit CurseError(const char *message) : message(message) {}
 
-        const char *what() const noexcept override {
+        [[nodiscard]] const char *what() const noexcept override {
             return message;
         }
 
@@ -17,11 +17,19 @@ namespace cf {
         const char *message;
     };
 
-    class CurseAPIError : public CurseError {
+    class CurseAPIError final : public CurseError {
     public:
-        explicit CurseAPIError(const char *message) : CurseError(message) {}
+        explicit CurseAPIError(const char *message)
+            : CurseError(message) {
+        }
     };
+
+    class CurseParseError final : public CurseError {
+    public:
+        explicit CurseParseError(const char *message)
+            : CurseError(message) {
+        }
     };
-} // cf
+}
 
 #endif //CURSEERRORS_HPP
