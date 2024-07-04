@@ -4,10 +4,12 @@
 
 #include <cpr/cpr.h>
 #include <nlohmann/json.hpp>
+#include <nlohmann/detail/exceptions.hpp>
 #include <string>
 
 namespace cf {
     using json = nlohmann::json;
+    namespace json_ns = nlohmann::detail;
     using namespace cpr;
     using std::string;
 
