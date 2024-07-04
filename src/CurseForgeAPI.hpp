@@ -4,7 +4,6 @@
 
 #include <cpr/cpr.h>
 #include <nlohmann/json.hpp>
-#include <nlohmann/detail/exceptions.hpp>
 #include <string>
 
 namespace cf {
@@ -12,6 +11,8 @@ namespace cf {
     namespace json_ns = nlohmann::detail;
     using namespace cpr;
     using std::string;
+    using std::optional;
+    using std::nullopt;
 
     class CurseForgeAPI {
     private:
@@ -21,8 +22,7 @@ namespace cf {
 
     public:
         CurseForgeAPI(const string &api_key);
-        ~CurseForgeAPI();
-        json fetch(const string &path);
+        json fetch(const string &path, const Body & body = {});
     };
 };
 
