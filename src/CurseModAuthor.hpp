@@ -10,11 +10,10 @@ using json = nlohmann::json;
 using std::string;
 
 class CurseModAuthor {
+public:
     int32_t id;
     string name;
     string url;
-
-public:
     static CurseModAuthor from_json(const json &data);
 };
 
