@@ -6,5 +6,5 @@ namespace cf::errors {
     }
 
     CurseAPIError::CurseAPIError(string message) : message(move(message)) {}
-    NotFoundError::NotFoundError(string for_path) : CurseAPIError("[404] Not Found: " + for_path) {}
+    NotFoundError::NotFoundError(string for_path) : CurseAPIError("[404] NotFoundError: " + for_path) {}
 }
