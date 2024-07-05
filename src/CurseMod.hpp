@@ -202,7 +202,7 @@ public:
     optional<double> rating = std::nullopt;
 
     static CurseMod from_json(const json &data);
-    static CurseMod from_id(int32_t id, CurseForgeAPI &engine);
+    const static CurseMod from_id(int32_t id, CurseForgeAPI &engine);
 };
 
 }
