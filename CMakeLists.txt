@@ -3,7 +3,6 @@ project(CurseForge)
 
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}/bin)
-option(BUILD_SHARED_LIBS "Build shared libraries" OFF)
 
 include(FetchContent)
 FetchContent_Declare(cpr GIT_REPOSITORY https://github.com/libcpr/cpr.git
@@ -15,11 +14,17 @@ FetchContent_MakeAvailable(json)
 
 file(GLOB SOURCES "src/*.cpp")
 file(GLOB HEADERS "src/*.hpp")
-add_executable(CurseForge_test tests/main.cpp)
-add_library(curseforge STATIC ${SOURCES} ${HEADERS})
+add_library(curseforge SHARED ${SOURCES} ${HEADERS})
+
+add_library(curseforge-static STATIC ${SOURCES} ${HEADERS})
+
+add_library(curseforge::shared ALIAS curseforge)
+add_library(curseforge::static ALIAS curseforge-static)
 
 target_include_directories(curseforge PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/src)
+target_include_directories(curseforge-static PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/src)
 
 target_link_libraries(curseforge PUBLIC cpr::cpr nlohmann_json::nlohmann_json)
-target_link_libraries(CurseForge_test PRIVATE curseforge)
+target_link_libraries(curseforge-static PUBLIC cpr::cpr nlohmann_json::nlohmann_json)
 
+add_subdirectory(tests)
