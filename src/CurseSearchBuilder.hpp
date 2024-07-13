@@ -16,6 +16,7 @@ using std::string;
 using std::optional;
 using std::nullopt;
 using json = nlohmann::json;
+using std::to_string;
 
 class CurseSearchBuilder {
 public:
