@@ -56,4 +56,7 @@ namespace cf {
         return from_json(engine.fetch("/v1/mods/" + std::to_string(id))["data"]);
     }
 
+    vector<CurseMod> CurseMod::search() {
+        return {};
+    }
 }
