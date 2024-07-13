@@ -162,7 +162,7 @@ SCHEMA
 #include "CurseModAuthor.hpp"
 #include "CurseModAsset.hpp"
 #include "CurseFile.hpp"
-#include "CurseModLoaderType.hpp"
+#include "CurseSearchBuilder.hpp"
 #include "CurseFileIndex.hpp"
 
 namespace cf {
@@ -203,7 +203,7 @@ public:
 
     static CurseMod from_json(const json &data);
     static CurseMod from_id(int32_t id, CurseForgeAPI &engine);
-    static vector<CurseMod> search();
+    static vector<CurseMod> search(CurseSearchBuilder &builder, CurseForgeAPI &engine);
 };
 
 }
