@@ -66,8 +66,8 @@ try {
 - [x] Implement the cache
 - [x] Implement the fetch method
 - [x] Deal with the download URL being a null value
-- [ ] Implement the search method
-- [ ] Wrap the ENTIRE API
+- [x] Implement the search method
+- [x] Wrap the ENTIRE API
 - [x] Rename the classes so they have a `Curse` prefix
 
 ## FAQ
