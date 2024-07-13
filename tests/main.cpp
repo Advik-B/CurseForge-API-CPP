@@ -13,19 +13,12 @@ int main(int argc, char **argv) {
     string apiKey = argv[1];
     cf::CurseForgeAPI api(apiKey);
     try {
-        // auto searchQuery = cf::CurseSearchBuilder::Minecraft();
-        // const auto mods = cf::CurseMod::search(searchQuery, api);
-        // for (const auto &mod : mods) {
-        //     if (mod.isBlocked) {
-        //         cout << "Blocked: ";
-        //         cout << mod.id;
-        //     }
-        // }
-        const auto mod = cf::CurseMod::from_id(374528, api);
-        cout << mod.id << endl;
-        cout << mod.name << endl;
-        cout << mod.authors[0].name << endl;
-        cout << mod.latestFiles[0].downloadUrl.value_or("nope") << endl;
+        auto searchQuery = cf::CurseSearchBuilder::Minecraft();
+        searchQuery.filterText = "jei";
+        const auto mods = cf::CurseMod::search(searchQuery, api);
+        for (const auto &mod : mods) {
+            cout << mod.name << endl;
+        }
     } catch (const cf::errors::CurseAPIError& e) {
         cout << e.what() << endl;
     } catch (const std::exception& e) {
