@@ -58,6 +58,7 @@ namespace cf {
 
     vector<CurseMod> CurseMod::search(CurseSearchBuilder &builder, CurseForgeAPI &engine) {
         vector<CurseMod> mods;
+        mods.reserve(50);
         json data = engine.fetch("/v1/mods/search?" + builder.to_query_string())["data"];
         for (const auto &mod : data) {
             mods.push_back(from_json(mod));
