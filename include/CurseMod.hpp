@@ -209,6 +209,7 @@ public:
 private:
     void unblock();
 };
+  typedef CurseMod CurseAddon;
 }
 
 #endif //CURSEMOD_HPP
