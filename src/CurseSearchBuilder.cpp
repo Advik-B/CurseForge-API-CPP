@@ -46,8 +46,8 @@ namespace cf {
         if (data.contains("gameVersions")) {
             builder.gameVersions = data["gameVersions"];
         }
-        if (data.contains("searchFilter")) {
-            builder.searchFilter = data["searchFilter"];
+        if (data.contains("filterText")) {
+            builder.filterText = data["filterText"];
         }
         if (data.contains("sortField")) {
             builder.sortField = static_cast<CurseModsSearchSortField>(data["sortField"]);
@@ -100,8 +100,8 @@ namespace cf {
         if (gameVersions.has_value()) {
             data["gameVersions"] = gameVersions.value();
         }
-        if (searchFilter.has_value()) {
-            data["searchFilter"] = searchFilter.value();
+        if (filterText.has_value()) {
+            data["filterText"] = filterText.value();
         }
         if (sortField.has_value()) {
             data["sortField"] = sortField.value();
@@ -154,8 +154,8 @@ namespace cf {
         if (gameVersions.has_value()) {
             query += "&gameVersions=" + url_encode(gameVersions.value());
         }
-        if (searchFilter.has_value()) {
-            query += "&searchFilter=" + url_encode(searchFilter.value());
+        if (filterText.has_value()) {
+            query += "&filterText=" + url_encode(filterText.value());
         }
         if (sortField.has_value()) {
             const auto enum2int = static_cast<int>(sortField.value());
