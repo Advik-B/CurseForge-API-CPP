@@ -205,6 +205,7 @@ public:
     static CurseMod from_json(const json &data);
     static CurseMod from_id(int32_t id, CurseForgeAPI &engine);
     static vector<CurseMod> search(CurseSearchBuilder &builder, CurseForgeAPI &engine);
+    string get_url() const;
 private:
     void unblock();
 };

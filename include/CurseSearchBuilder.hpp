@@ -26,7 +26,7 @@ public:
     optional<string> categoryIds     = nullopt;
     optional<string> gameVersion     = nullopt;
     optional<string> gameVersions    = nullopt;
-    optional<string> searchFilter    = nullopt;
+    optional<string> filterText    = nullopt;
     optional<CurseModsSearchSortField> sortField = nullopt;
     optional<string> sortOrder = nullopt;
     optional<CurseModLoaderType> modLoaderType = nullopt;

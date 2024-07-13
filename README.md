@@ -43,7 +43,7 @@ int main() {
 
 ### Error Handling
 
-All errors are defined in the `cf::errors` namespace. Inside [CurseErrors.hpp](src/CurseErrors.hpp)
+All errors are defined in the `cf::errors` namespace. Inside [CurseErrors.hpp](include/CurseErrors.hpp)
 
 You can catch them like this:
 ```c++
