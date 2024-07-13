@@ -94,8 +94,7 @@ namespace cf {
     }
 
     string CurseMod::get_url() const {
-        // Construct the URL from the id, NOT the slug
-        return "https://www.curseforge.com/minecraft/mc-mods/" + std::to_string(id);
+        return "https://www.curseforge.com/minecraft/mc-mods/" + slug;
     }
 
     void CurseMod::unblock() {
