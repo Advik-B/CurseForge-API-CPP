@@ -22,7 +22,9 @@ namespace cf {
         if (data.contains("fileSizeOnDisk")) {
             file.fileSizeOnDisk = data["fileSizeOnDisk"];
         }
-        file.downloadUrl = data["downloadUrl"];
+        if (data.contains("downloadUrl")) {
+            file.downloadUrl = data["downloadUrl"];
+        }
         for (const auto &version : data["gameVersions"]) {
             file.gameVersions.push_back(version);
         }
