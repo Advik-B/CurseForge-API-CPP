@@ -56,7 +56,12 @@ namespace cf {
         return from_json(engine.fetch("/v1/mods/" + std::to_string(id))["data"]);
     }
 
-    vector<CurseMod> CurseMod::search() {
-        return {};
+    vector<CurseMod> CurseMod::search(CurseSearchBuilder &builder, CurseForgeAPI &engine) {
+        vector<CurseMod> mods;
+        json data = engine.fetch("/v1/mods/search?" + builder.to_query_string())["data"];
+        for (const auto &mod : data) {
+            mods.push_back(from_json(mod));
+        }
+        return mods;
     }
 }
