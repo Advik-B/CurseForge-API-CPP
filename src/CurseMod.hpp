@@ -200,12 +200,14 @@ public:
     bool isAvailable;
     int32_t thumbsUpCount;
     optional<double> rating = std::nullopt;
+    bool isBlocked; // Custom field to check if the mod is blocked by the API
 
     static CurseMod from_json(const json &data);
     static CurseMod from_id(int32_t id, CurseForgeAPI &engine);
     static vector<CurseMod> search(CurseSearchBuilder &builder, CurseForgeAPI &engine);
+private:
+    void unblock();
 };
-
 }
 
 #endif //CURSEMOD_HPP
