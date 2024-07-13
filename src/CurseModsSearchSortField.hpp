@@ -3,7 +3,7 @@
 #define CURSEMODSSEARCHSORTFIELD_HPP
 
 namespace cf {
-    enum class ModsSearchSortField {
+    enum class CurseModsSearchSortField {
         FEATURED = 1,
         POPULARITY = 2,
         LAST_UPDATED = 3,
