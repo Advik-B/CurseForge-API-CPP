@@ -13,7 +13,7 @@ FetchContent_Declare(json URL https://github.com/nlohmann/json/releases/download
 FetchContent_MakeAvailable(json)
 
 file(GLOB SOURCES "src/*.cpp")
-file(GLOB HEADERS "src/*.hpp")
+file(GLOB HEADERS "include/*.hpp")
 add_library(curseforge SHARED ${SOURCES} ${HEADERS})
 
 add_library(curseforge-static STATIC ${SOURCES} ${HEADERS})
@@ -21,8 +21,8 @@ add_library(curseforge-static STATIC ${SOURCES} ${HEADERS})
 add_library(curseforge::shared ALIAS curseforge)
 add_library(curseforge::static ALIAS curseforge-static)
 
-target_include_directories(curseforge PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/src)
-target_include_directories(curseforge-static PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/src)
+target_include_directories(curseforge PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include)
+target_include_directories(curseforge-static PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include)
 
 target_link_libraries(curseforge PUBLIC cpr::cpr nlohmann_json::nlohmann_json)
 target_link_libraries(curseforge-static PUBLIC cpr::cpr nlohmann_json::nlohmann_json)
