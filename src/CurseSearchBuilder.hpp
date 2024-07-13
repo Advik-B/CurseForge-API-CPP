@@ -35,7 +35,7 @@ public:
     optional<int32_t> primaryAuthorId = nullopt;
     optional<string> slug = nullopt;
     optional<int32_t> index = nullopt;
-    optional<int32_t> pageSize = nullopt;
+    optional<int32_t> pageSize = 50;
 
     static CurseSearchBuilder Minecraft();
     static CurseSearchBuilder from_json(const json &data);
