@@ -96,7 +96,7 @@ public:
     int64_t fileLength;
     int64_t downloadCount;
     optional<int64_t> fileSizeOnDisk = nullopt;
-    string downloadUrl;
+    optional<string> downloadUrl;
     vector<string> gameVersions;
     vector<CurseSortableGameVersion> sortableGameVersions;
     vector<CurseFileDependency> dependencies;
