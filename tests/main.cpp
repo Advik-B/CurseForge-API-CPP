@@ -14,7 +14,7 @@ int main(int argc, char **argv) {
     cf::CurseForgeAPI api(apiKey);
     try {
         auto searchQuery = cf::CurseSearchBuilder::Minecraft();
-        searchQuery.filterText = "jei";
+        searchQuery.filterText = "Apple Skin";
         const auto mods = cf::CurseMod::search(searchQuery, api);
         for (const auto &mod : mods) {
             cout << mod.name << endl;
