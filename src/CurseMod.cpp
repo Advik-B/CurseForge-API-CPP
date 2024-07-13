@@ -56,8 +56,10 @@ namespace cf {
         mod.dateModified = data["dateModified"];
         mod.dateReleased = data["dateReleased"];
         if (data.contains("allowModDistribution")) {
-            if (data["allowModDistribution"].is_boolean())
+            if (data["allowModDistribution"].is_boolean()) {
                 mod.allowModDistribution = data["allowModDistribution"];
+                mod.isBlocked = false;
+            }
             else {
                 mod.allowModDistribution = false;
                 mod.isBlocked = true;
@@ -89,6 +91,11 @@ namespace cf {
             // std::cout << index++ << std::endl;
         }
         return mods;
+    }
+
+    string CurseMod::get_url() const {
+        // Construct the URL from the id, NOT the slug
+        return "https://www.curseforge.com/minecraft/mc-mods/" + std::to_string(id);
     }
 
     void CurseMod::unblock() {
