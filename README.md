@@ -63,7 +63,7 @@ try {
 ## TODO
 
 - [x] Implement the export methods
-- [x] Implement the cache
+- [ ] Implement the cache
 - [x] Implement the fetch method
 - [x] Deal with the download URL being a null value
 - [x] Implement the search method
