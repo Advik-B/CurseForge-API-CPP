@@ -6,7 +6,7 @@
 
 This is a no-compromise CurseForge API wrapper for C++. It is a re-write of [Curseforge API][python-cfapi] which is also maintained & actively developed by me.
 
-This project is still in development, and is not yet ready for production use.
+This project is ready for production use.
 
 ## Features
 
